@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+
+    
+    <div class="header">
+        <div class="left">
+            <h1>Portfolio</h1>
+            <div class="pic">
+                <img src="WhatsApp Image 2023-10-05 at 18.43.53_2e961953.jpg">
+            </div>
+        </div>
+        <div class="tab-titles">
+        <p class="tab-links active-link" onclick="opentab('about')">About</p>
+        <p class="tab-links" onclick="opentab('Education')">Education</p>
+        <p class="tab-links" onclick="opentab('Skills')">Skills</p>
+        <p class="tab-links" onclick="opentab('Contact')">Contact</p>
+        </div>
+        </div>
+    </div>
+<div class="databox">   
+<div class="sidedata">
+   <h2>Devananda Jyothi</h2>
+   <h2>CS1A</h2>
+   <h2>Model Engineering College, Thrikkakara</h2>
+   
+</div>
+<div class="rightdata">
+    <div id="about" class="tab-contents active-tab about-col-2">
+        <h1>About Me</h1>
+        <p>Hey there! I'm Devananda Jyothi, a Computer Science and Engineering student at Model Engineering College, Thrikkakara. I am a continuous learner and always eager to expand my skill set. My goal is to make a meaningful impact in the world of software development.</p>
+    </div>
+    
+    
+    
+    
+        
+        <div class="tab-contents " id="Skills">
+            <h1>Skills</h1>
+            <ul>
+                <li>Programming Languages: Python, JavaScript</li>
+                <li>Web Development: HTML, CSS</li>
+            
+                <li>Database Management: MySQL</li>
+            </ul>
+        </div>
+        
+       
+        <div class="tab-contents " id="Education">
+            <h1>Education</h1>
+            <ul>
+                <li><span>2011-2023</span><br>Bhavan's Vidya Mandir, Girinagar</li>
+                <li><span>2023-2027</span><br>Bachelor of Technology (B.Tech) in Computer Science<br>Model Engineering College,Thrikkakara</li>
+            <ul>
+                
+        </div>
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="Contact" class="tab-contents">
+        <div class="container">
+            <div class="row1">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    
+                    
+                    <div class="social-icons">
+                        <p><a href="mailto:devanandajyothi2005@gmail.com"><i class="fa fa-regular fa-envelope"></i></a>devanandajyothi2005@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="3" placeholder="Your Message"></textarea>
+                    <button type="submit" class="submitbtn">Submit</button>
+                </form>
+                <span id="msg"></span>
+                </div>
+            
+            </div>
+        
+        </div>
+    </div>
+    
+    
+         
+    
+        
+            
+                   
+                    
+    </div>
+
+</div>
+
+
+
+
+
+
+</div>
+ <script src="scripts.js"></script>  
+ <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzdmwxLAjK8uyKwOApU_hnGrprji5ZfqTQuL5l7ja86OZRD8J5q0Haswz-jVlSRLGTDWg/exec"
+    const form = document.forms['submit-to-google-sheet']
+    const msg=document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => msg.innerHTML='Message sent succesfully!')
+        setTimeout(function(){msg.innerHTML=''},5000)
+        form.reset()
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script> 
+</body>
+</html>
